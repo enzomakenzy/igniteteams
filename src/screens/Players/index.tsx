@@ -14,8 +14,7 @@ export function Players() {
         subtitle="adicione a galera e sepre os itens"
       />
 
-      <ButtonIcon />
-    
+      <ButtonIcon icon="house" />
     </Container>
   )
 }
