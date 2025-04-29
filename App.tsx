@@ -1,11 +1,11 @@
 import { StatusBar } from "react-native";
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from "@expo-google-fonts/roboto"
 
-import { Groups } from '@screens/Groups';
+import { Players } from "@screens/Players";
 import { Loading } from "@components/Loading";
-import theme from "./src/theme"
 
 import { ThemeProvider } from 'styled-components/native';
+import theme from "./src/theme"
 
 export default function App() {
   // o useFonts é assíncrono e pode demorar um pouco mais a carregar do que a aplicação, 
@@ -22,7 +22,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      { fontsLoaded ? <Groups /> : <Loading /> }
+      { fontsLoaded ? <Players /> : <Loading /> }
     </ThemeProvider>
   )
 }
