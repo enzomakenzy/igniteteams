@@ -17,9 +17,8 @@ export default {
   },
 
   FONT_FAMILY: {
-    REGULAR: "NotoSans_400Regular",
-    MEDIUM: "NotoSans_500Medium",
-    BOLD: "NotoSans_700Bold"
+    REGULAR: "Roboto_400Regular",
+    BOLD: "Roboto_700Bold"
   },
 
   FONT_SIZE: {
