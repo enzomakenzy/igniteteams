@@ -1,30 +1,37 @@
-import { Input } from "@components/Input"
-import { Header } from "@components/Header"
-import { Filter } from "@components/Filter"
-import { Highlight } from "@components/Highlight"
-import { ListEmpty } from "@components/ListEmpty"
-import { ButtonIcon } from "@components/ButtonIcon"
-import { PlayerCard } from "@components/PLayerCard"
+import { useState } from "react";
+import { useRoute } from "@react-navigation/native";
+import { FlatList } from "react-native";
 
-import { useState } from "react"
-import { FlatList } from "react-native"
+import { Input } from "@components/Input";
+import { Button } from "@components/Button";
+import { Header } from "@components/Header";
+import { Filter } from "@components/Filter";
+import { Highlight } from "@components/Highlight";
+import { ListEmpty } from "@components/ListEmpty";
+import { ButtonIcon } from "@components/ButtonIcon";
+import { PlayerCard } from "@components/PLayerCard";
 
-import { Container, Form, HeaderList, NumbersOfPlayers} from "./styles"
-import { Button } from "@components/Button"
+import { Container, Form, HeaderList, NumbersOfPlayers} from "./styles";
+
+type RouteParams = {
+  group: string;
+}
 
 export function Players() {
-  const [team, setTeam] = useState("Time A")
-  const [players, setPlayers] = useState(["Rodrigo", "Diego", "Enzo", "Layza", "Gabriel", "Maria", "Paula", "Erik", "Marcia"])
+  const [team, setTeam] = useState("Time A");
+  const [players, setPlayers] = useState([]);
+
+  const route = useRoute();
+  const { group } = route.params as RouteParams;
 
   return (
     <Container>
       <Header showBackButton />
 
       <Highlight 
-        title="Nome da turma"
+        title={group}
         subtitle="adicione a galera e sepre os itens"
       />
-      
 
       <Form>
         <Input 
